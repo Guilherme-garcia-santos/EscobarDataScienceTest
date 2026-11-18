@@ -1,0 +1,15 @@
+algoritmo,balanceamento_smote,acuracia_validacao_cruzada,desvio_validacao_cruzada,acuracia_teste,acuracia_revalidacao,desvio_revalidacao
+DecisionTree,não,0.775,0.0474,0.6279,0.765,0.0589
+RandomForest,não,0.7717,0.0386,0.6977,0.7615,0.0442
+GradientBoosting,não,0.765,0.0339,0.686,0.7605,0.0397
+KNN,não,0.76,0.0515,0.7093,0.756,0.0334
+SVM,não,0.7633,0.0397,0.7209,0.7445,0.0358
+DecisionTree,sim,0.7067,0.0955,0.686,0.729,0.0546
+LogisticRegression,não,0.7467,0.0397,0.6977,0.728,0.0373
+NaiveBayes,não,0.7317,0.0382,0.7093,0.725,0.0332
+RandomForest,sim,0.7183,0.0588,0.6512,0.71,0.0469
+SVM,sim,0.7183,0.052,0.686,0.7055,0.053
+LogisticRegression,sim,0.705,0.01,0.6977,0.705,0.01
+GradientBoosting,sim,0.7167,0.0624,0.6047,0.7025,0.0571
+KNN,sim,0.7067,0.047,0.6628,0.679,0.0637
+NaiveBayes,sim,0.5967,0.0826,0.5698,0.5805,0.0999

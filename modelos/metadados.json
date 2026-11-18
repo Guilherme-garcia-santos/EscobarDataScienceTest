@@ -1,0 +1,44 @@
+{
+  "algoritmo": "DecisionTree",
+  "balanceamento_smote": false,
+  "hiperparametros": {
+    "splitter": "random",
+    "min_samples_split": 18,
+    "min_samples_leaf": 6,
+    "max_depth": 5,
+    "criterion": "entropy"
+  },
+  "acuracia_validacao_cruzada_busca": 0.775,
+  "acuracia_revalidacao_cruzada": 0.765,
+  "acuracia_teste": 0.6279,
+  "acuracia_referencia_classe_majoritaria_cv": 0.705,
+  "acuracia_referencia_classe_majoritaria_teste": 0.6977,
+  "modas_para_valores_ausentes": {
+    "age": "50-59",
+    "menopause": "premeno",
+    "tumor-size": "30-34",
+    "inv-nodes": "0-2",
+    "node-caps": "no",
+    "deg-malig": "2",
+    "breast": "left",
+    "breast-quad": "left_low",
+    "irradiat": "no"
+  },
+  "colunas_codificadas": [
+    "age",
+    "tumor-size",
+    "inv-nodes",
+    "deg-malig",
+    "node-caps",
+    "irradiat",
+    "breast",
+    "menopause_lt40",
+    "menopause_ge40",
+    "menopause_premeno",
+    "breast-quad_left_up",
+    "breast-quad_left_low",
+    "breast-quad_right_up",
+    "breast-quad_right_low",
+    "breast-quad_central"
+  ]
+}

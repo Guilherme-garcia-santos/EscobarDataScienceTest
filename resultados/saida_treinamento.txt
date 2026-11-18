@@ -1,0 +1,70 @@
+Registros: 286  |  Atributos: 9
+Valores ausentes por atributo:
+node-caps      8
+breast-quad    1
+
+Distribuição da classe:
+Class
+no-recurrence-events    201
+recurrence-events        85
+
+Treino: 200 registros  |  Teste: 86 registros
+Atributos após a codificação: 15
+
+Acurácia de referência (sempre a classe majoritária): CV = 0.7050  |  teste = 0.6977
+
+DecisionTree        SMOTE=sim  acurácia CV = 0.7067 (±0.0955)  |  acurácia teste = 0.6860
+DecisionTree        SMOTE=não  acurácia CV = 0.7750 (±0.0474)  |  acurácia teste = 0.6279
+RandomForest        SMOTE=sim  acurácia CV = 0.7183 (±0.0588)  |  acurácia teste = 0.6512
+RandomForest        SMOTE=não  acurácia CV = 0.7717 (±0.0386)  |  acurácia teste = 0.6977
+GradientBoosting    SMOTE=sim  acurácia CV = 0.7167 (±0.0624)  |  acurácia teste = 0.6047
+GradientBoosting    SMOTE=não  acurácia CV = 0.7650 (±0.0339)  |  acurácia teste = 0.6860
+KNN                 SMOTE=sim  acurácia CV = 0.7067 (±0.0470)  |  acurácia teste = 0.6628
+KNN                 SMOTE=não  acurácia CV = 0.7600 (±0.0515)  |  acurácia teste = 0.7093
+SVM                 SMOTE=sim  acurácia CV = 0.7183 (±0.0520)  |  acurácia teste = 0.6860
+SVM                 SMOTE=não  acurácia CV = 0.7633 (±0.0397)  |  acurácia teste = 0.7209
+LogisticRegression  SMOTE=sim  acurácia CV = 0.7050 (±0.0100)  |  acurácia teste = 0.6977
+LogisticRegression  SMOTE=não  acurácia CV = 0.7467 (±0.0397)  |  acurácia teste = 0.6977
+NaiveBayes          SMOTE=sim  acurácia CV = 0.5967 (±0.0826)  |  acurácia teste = 0.5698
+NaiveBayes          SMOTE=não  acurácia CV = 0.7317 (±0.0382)  |  acurácia teste = 0.7093
+
+Ranking dos algoritmos:
+         algoritmo balanceamento_smote  acuracia_validacao_cruzada  desvio_validacao_cruzada  acuracia_teste  acuracia_revalidacao  desvio_revalidacao
+      DecisionTree                 não                      0.7750                    0.0474          0.6279                0.7650              0.0589
+      RandomForest                 não                      0.7717                    0.0386          0.6977                0.7615              0.0442
+  GradientBoosting                 não                      0.7650                    0.0339          0.6860                0.7605              0.0397
+               KNN                 não                      0.7600                    0.0515          0.7093                0.7560              0.0334
+               SVM                 não                      0.7633                    0.0397          0.7209                0.7445              0.0358
+      DecisionTree                 sim                      0.7067                    0.0955          0.6860                0.7290              0.0546
+LogisticRegression                 não                      0.7467                    0.0397          0.6977                0.7280              0.0373
+        NaiveBayes                 não                      0.7317                    0.0382          0.7093                0.7250              0.0332
+      RandomForest                 sim                      0.7183                    0.0588          0.6512                0.7100              0.0469
+               SVM                 sim                      0.7183                    0.0520          0.6860                0.7055              0.0530
+LogisticRegression                 sim                      0.7050                    0.0100          0.6977                0.7050              0.0100
+  GradientBoosting                 sim                      0.7167                    0.0624          0.6047                0.7025              0.0571
+               KNN                 sim                      0.7067                    0.0470          0.6628                0.6790              0.0637
+        NaiveBayes                 sim                      0.5967                    0.0826          0.5698                0.5805              0.0999
+
+MELHOR MODELO: DecisionTree | balanceamento SMOTE: não
+Hiperparâmetros: {'splitter': 'random', 'min_samples_split': 18, 'min_samples_leaf': 6, 'max_depth': 5, 'criterion': 'entropy'}
+Acurácia na revalidação cruzada: 0.7650 (referência: 0.7050)
+Acurácia no teste: 0.6279 (referência: 0.6977)
+Matriz de confusão (linhas = real, colunas = previsto):
+                      no-recurrence-events  recurrence-events
+no-recurrence-events                    47                 13
+recurrence-events                       19                  7
+                      precision    recall  f1-score   support
+
+no-recurrence-events       0.71      0.78      0.75        60
+   recurrence-events       0.35      0.27      0.30        26
+
+            accuracy                           0.63        86
+           macro avg       0.53      0.53      0.53        86
+        weighted avg       0.60      0.63      0.61        86
+
+Modelo vencedor sem balanceamento: treino definitivo com as classes originais.
+
+Modelos salvos em modelos/:
+  normalizador_breast_cancer.model
+  breast_cancer_classificador.model
+  metadados.json
