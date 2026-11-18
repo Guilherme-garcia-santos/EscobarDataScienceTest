@@ -36,10 +36,18 @@ breast-cancer-ml/
 
 ```bash
 pip install -r requirements.txt
+
+# 1) módulo de treinamento: gera as pastas modelos/ e resultados/
 python treinamento.py
+
+# 2) módulo de inferência: classifica a paciente de exemplo definida no código
 python inferencia.py
+
+# 2b) ou informe os dados da nova paciente pelo terminal
+python inferencia.py --interativo
 ```
 
+Testado com Python 3.13, pandas 3.1, numpy 2.5, scikit-learn 1.9 e imbalanced-learn 0.14.
 O treinamento leva cerca de 5 minutos. Os modelos já treinados estão em `modelos/`,
 então a inferência funciona sem treinar de novo.
 

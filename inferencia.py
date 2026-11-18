@@ -6,6 +6,7 @@ Recebe uma nova paciente e determina o indicativo de diagnóstico (atributo Clas
 
 Uso:
   python inferencia.py                       (classifica a paciente de exemplo)
+  python inferencia.py --interativo          (pergunta os dados no terminal)
   python inferencia.py --age 40-49 --menopause premeno --tumor-size 30-34 \
       --inv-nodes 3-5 --node-caps yes --deg-malig 3 --breast left \
       --breast-quad left_low --irradiat no
@@ -82,10 +83,16 @@ def diagnosticar(paciente):
 def ler_argumentos():
     parser = argparse.ArgumentParser(
         description='Indicativo de diagnóstico (Class) para uma nova paciente - Breast Cancer UCI')
+    parser.add_argument('--interativo', action='store_true',
+                        help='pergunta cada atributo da nova paciente no terminal')
     for atributo in pp.ATRIBUTOS:
         parser.add_argument(f'--{atributo}', dest=atributo,
                             help='Valores aceitos: ' + ', '.join(pp.VALORES_VALIDOS[atributo]) + ', ?')
     argumentos = vars(parser.parse_args())
+    if argumentos.pop('interativo'):
+        print('Informe os dados da nova paciente (use ? se o valor for desconhecido).\n')
+        return {atributo: input(f'{atributo} [{", ".join(pp.VALORES_VALIDOS[atributo])}]: ')
+                for atributo in pp.ATRIBUTOS}
     if all(valor is None for valor in argumentos.values()):
         print('Nenhum dado informado: usando a paciente de exemplo.\n')
         return NOVA_PACIENTE_EXEMPLO
